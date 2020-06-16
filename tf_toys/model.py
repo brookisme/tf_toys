@@ -64,6 +64,7 @@ def cbr_block(
             x=layers.Add()([x, res])
         if output_relu:
             x=layers.ReLU()(x)
+        return x
     return _block
 
 
@@ -73,7 +74,6 @@ def cbr(
         padding='same',
         seperable=False,
         batch_norm=True,
-        depth=1,
         relu=True,
         **kwargs):
     """conv-bn-relu"""

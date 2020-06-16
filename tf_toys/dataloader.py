@@ -118,7 +118,7 @@ class FGenerator(tf.keras.utils.Sequence):
             iblob,tblob=self.blob_images(inpts[b],targs[b])
             inpts[b]=iblob
             targs[b]=tblob
-       if self.target_type==FGenerator.CLASSIFICATION:
+        if self.target_type==FGenerator.CLASSIFICATION:
             targs=[ self._get_classification(t) for t in targs ]
         elif self.target_type==FGenerator.MULTI_LABEL:
             targs=[ self._get_labels(t) for t in targs ]
